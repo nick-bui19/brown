@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import TimeZoneDisplay from './components/TimeZoneDisplay';
+import WordOfTheDay from './components/WordOfTheDay';
+import PhotoGallery from './components/PhotoGallery';
+import CountdownTimer from './components/CountdownTimer';
+// import MovieSync from './components/MovieSync'; // later
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1> Our Long Distance Hub 💌</h1>
       </header>
+      <main>
+        <TimeZoneDisplay />
+        <WordOfTheDay />
+        <PhotoGallery />
+        <CountdownTimer />
+        {/* <MovieSync /> */}
+      </main>
     </div>
   );
 }
