@@ -3,6 +3,7 @@ import TimeZoneDisplay from './components/TimeZoneDisplay';
 import WordOfTheDay from './components/WordOfTheDay';
 import PhotoGallery from './components/PhotoGallery';
 import CountdownTimer from './components/CountdownTimer';
+import TimeSlider from './components/TimeSlider';
 // import MovieSync from './components/MovieSync'; // later
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <h1> Our Long Distance Hub 💌</h1>
       </header>
       <main>
+        <TimeSlider />
         <TimeZoneDisplay />
         <WordOfTheDay />
         <PhotoGallery />
