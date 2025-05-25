@@ -13,11 +13,11 @@ function App() {
         <h1> Our Long Distance Hub 💌</h1>
       </header>
       <main>
+        <CountdownTimer />
         <TimeSlider />
         <TimeZoneDisplay />
         <WordOfTheDay />
         <PhotoGallery />
-        <CountdownTimer />
         {/* <MovieSync /> */}
       </main>
     </div>

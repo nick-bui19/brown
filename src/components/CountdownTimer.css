@@ -1,0 +1,9 @@
+/* src/components/CountdownTimer.css */
+.countdown-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 30px auto;
+  max-width: 90%;
+  color: #2f2f2f;
+}
