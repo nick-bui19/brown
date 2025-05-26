@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Our Long Distance Hub 💌</h1>
+        <p> Our Long Distance Hub 💌</p>
       </header>
       <main>
         <CountdownTimer />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './CountdownTimer.css';
 
 function CountdownTimer() {
-  const targetDate = new Date('2025-08-19T00:00:00'); // Set reunion time
+  const targetDate = new Date('2025-08-13T23:30:00'); // Set reunion time
 
   const calculateTimeLeft = () => {
     const now = new Date();
