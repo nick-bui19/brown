@@ -5,6 +5,7 @@ import PhotoGallery from './components/PhotoGallery';
 import CountdownTimer from './components/CountdownTimer';
 import TimeSlider from './components/TimeSlider';
 import LiveTime from './components/LiveTime';
+import MessageInbox from './components/MessageInbox';
 // import MovieSync from './components/MovieSync'; // later
 
 function App() {
@@ -14,12 +15,13 @@ function App() {
         <h1> Hey Tina and Brown!! 💌</h1>
       </header>
       <main>
+        <MessageInbox />
         <CountdownTimer />
         <LiveTime />
         <div className="feature-row">
-          <WordOfTheDay />
           <TimeSlider />
-          {/* MessageInbox goes here later */}
+          <WordOfTheDay />
+
         </div>
         <TimeZoneDisplay />
         <PhotoGallery />

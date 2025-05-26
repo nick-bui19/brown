@@ -1,0 +1,25 @@
+.message-box {
+  background-color: #ffeaea;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(255, 192, 203, 0.5);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  max-width: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.message-box:hover {
+  background-color: #ffd6dc;
+  box-shadow: 0 6px 12px rgba(255, 192, 203, 0.8);
+  transform: translateY(-2px);
+}
+
+.message-content, .message-preview {
+  font-family: 'Courier', monospace;
+  font-size: 1.1rem;
+  color: #f28b8b;
+  text-align: center;
+  white-space: pre-wrap;
+}
