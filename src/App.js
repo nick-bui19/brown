@@ -1,5 +1,4 @@
 import './App.css';
-import TimeZoneDisplay from './components/TimeZoneDisplay';
 import WordOfTheDay from './components/WordOfTheDay';
 import PhotoGallery from './components/PhotoGallery';
 import CountdownTimer from './components/CountdownTimer';
@@ -21,11 +20,8 @@ function App() {
         <div className="feature-row">
           <TimeSlider />
           <WordOfTheDay />
-
+          <PhotoGallery />
         </div>
-        <TimeZoneDisplay />
-        <PhotoGallery />
-        {/* <MovieSync /> */}
       </main>
     </div>
   );

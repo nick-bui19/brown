@@ -1,9 +1,9 @@
 import React from 'react';
 
 function WordOfTheDay() {
-  const word = 'trời ơi!'; 
+  const word = 'Trời ơi!'; 
   const explanation = '天啊‼️。';
-  const explanation2 = '"trời" means "天“, "ơi" in "anh ơi!" -> an endearing way to call someone!. Literally calling heaven woahhh!!'
+  const explanation2 = '"Trời" means "天“, "ơi" in "anh ơi!" - an endearing way to call someone! -> Literally exclaiming to heaven hahahah!!'
 
   return (
     <div className="feature-box">
