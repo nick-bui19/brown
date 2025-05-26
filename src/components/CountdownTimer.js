@@ -1,39 +1,60 @@
-// src/components/CountdownTimer.js
-
 import React, { useEffect, useState } from 'react';
 import './CountdownTimer.css';
 
-const CountdownTimer = ({ targetDate }) => {
+function CountdownTimer() {
+  const targetDate = new Date('2025-08-19T00:00:00'); // Set reunion time
+
   const calculateTimeLeft = () => {
     const now = new Date();
-    const difference = +new Date(targetDate) - +now;
+    console.log('Target Date:', targetDate);
+    console.log('Current Date:', new Date());
 
-    if (difference <= 0) return null;
+    const difference = targetDate - now;
 
+    console.log('Difference in ms:', difference);
+
+    if (difference <= 0) {
+      return {
+        months: 0,
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+    const seconds = Math.floor((difference / 1000) % 60);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const days = Math.floor((difference / (1000 * 60 * 60 * 24)) % 30);
     const months = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 
-    return { months, days, hours, minutes };
+    return { months, days, hours, minutes, seconds };
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000 * 10);
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
-  if (!timeLeft) {
-    return <h2 className="countdown-title">You're together now 💖</h2>;
-  }
-
   return (
-    <h2 className="countdown-title">
-      Hi bb, only {timeLeft.months} month{timeLeft.months !== 1 && 's'} {timeLeft.days} day{timeLeft.days !== 1 && 's'} {timeLeft.hours} hour{timeLeft.hours !== 1 && 's'} {timeLeft.minutes} minute{timeLeft.minutes !== 1 && 's'} until we see each other again.
-    </h2>
+    <div className="countdown">
+    {timeLeft ? (
+      <h2>
+        Hi bb, only {timeLeft.months} month{timeLeft.months !== 1 && 's'}{' '}
+        {timeLeft.days} day{timeLeft.days !== 1 && 's'} {timeLeft.hours} hour{timeLeft.hours !== 1 && 's'}{' '}
+        {timeLeft.minutes} minute{timeLeft.minutes !== 1 && 's'} {timeLeft.seconds} second{timeLeft.seconds !== 1 && 's'} until we see each other again.
+      </h2>
+
+    ) : (
+      <h2>Loading countdown...</h2>
+    )}
+  </div>
   );
-};
+}
 
 export default CountdownTimer;
