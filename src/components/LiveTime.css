@@ -1,0 +1,19 @@
+.live-time {
+  font-family: 'Georgia', monospace;
+  color: #f28b8b;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 10px;
+}
+.live-time h2 {
+  font-family: 'Courier', monospace;
+  font-size: 1.4rem;
+  color: #ff9494;
+  text-align: center;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 0 12px;
+}
