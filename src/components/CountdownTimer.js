@@ -45,7 +45,7 @@ function CountdownTimer() {
     <div className="countdown">
     {timeLeft ? (
       <h2>
-        Hi bb, only {timeLeft.months} month{timeLeft.months !== 1 && 's'}{' '}
+        Only {timeLeft.months} month{timeLeft.months !== 1 && 's'}{' '}
         {timeLeft.days} day{timeLeft.days !== 1 && 's'} {timeLeft.hours} hour{timeLeft.hours !== 1 && 's'}{' '}
         {timeLeft.minutes} minute{timeLeft.minutes !== 1 && 's'} {timeLeft.seconds} second{timeLeft.seconds !== 1 && 's'} until we see each other again.
       </h2>
