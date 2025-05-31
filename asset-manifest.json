@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ldr-project/static/css/main.ad6cb569.css",
-    "main.js": "/ldr-project/static/js/main.d862ae1f.js",
+    "main.js": "/ldr-project/static/js/main.94584559.js",
     "static/js/453.aa3c86b8.chunk.js": "/ldr-project/static/js/453.aa3c86b8.chunk.js",
     "index.html": "/ldr-project/index.html",
     "main.ad6cb569.css.map": "/ldr-project/static/css/main.ad6cb569.css.map",
-    "main.d862ae1f.js.map": "/ldr-project/static/js/main.d862ae1f.js.map",
+    "main.94584559.js.map": "/ldr-project/static/js/main.94584559.js.map",
     "453.aa3c86b8.chunk.js.map": "/ldr-project/static/js/453.aa3c86b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad6cb569.css",
-    "static/js/main.d862ae1f.js"
+    "static/js/main.94584559.js"
   ]
 }
