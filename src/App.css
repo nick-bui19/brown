@@ -86,3 +86,10 @@ h1 {
   font-family: 'Courier', monospace;
   color: #ff9494;
 }
+
+@media (max-width: 600px) {
+  .feature-box {
+    width: 92vw;
+    padding: 18px;
+  }
+}

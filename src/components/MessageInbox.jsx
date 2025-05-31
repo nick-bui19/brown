@@ -56,7 +56,14 @@ const heading = unreadCount ? `📥 Message Inbox (${unreadCount})`
                 className={`msg-btn ${opened ? "read" : "unread"}`}
                 onClick={() => setOpenId(m.id)}
               >
-                {opened ? m.title : <strong>📩 {m.title}</strong>}
+                {/* title */}
+                {opened ? (
+                  <span>{m.title}</span>
+                ) : (
+                  <strong>📩 {m.title}</strong>
+                )}
+
+                {/* time, right-aligned on desktop, drops below on mobile */}
                 <span className="msg-time">{prettyTime(m.sentAt)}</span>
               </button>
             );

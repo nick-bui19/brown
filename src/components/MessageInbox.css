@@ -74,3 +74,52 @@
   font-size: 0.9rem;
   opacity: 0.7;
 }
+
+/* Laptop half-screen breakpoint */
+@media (max-width: 900px) {         
+  .inbox-wrapper,
+  .message-box {
+    width: 92vw; /* fluid bp */     
+    max-width: 92vw;
+    padding: 18px;
+  }
+
+  /* list-row buttons stack title & time */
+  .msg-btn {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 600px) {
+  /* wrap that holds the whole inbox */
+  .inbox-wrapper {
+    width: 92vw; /* fluid bp */
+    padding: 16px;
+  }
+
+  /* each message row */
+  .msg-btn {
+    flex-direction: column;     /* title on top, time under */
+    gap: 4px;
+    text-align: center;
+  }
+
+  .msg-time {
+    font-size: 0.85rem;
+  }
+
+  /* big message “card” view  */
+  .message-box {
+    width: 92vw;
+    max-width: 92vw;
+    padding: 18px;
+  }
+}
+
+/* tighter spacing between rows on every screen size */
+.message-list {
+  gap: 0.75rem;
+}
