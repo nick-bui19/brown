@@ -23,3 +23,45 @@
   text-align: center;
   white-space: pre-wrap;
 }
+
+/* list container */
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* show unread vs read */
+.message-toggle.unread strong { font-weight: 700; }
+.message-toggle.read          { opacity: .75; }
+
+/* shared pill-button look */
+.msg-btn,
+.back-btn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2rem;
+  background: #ffe6e9;
+  color: #e36a6a;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(255, 192, 203, 0.4);
+  transition: all 0.25s ease;
+}
+
+.msg-btn:hover,
+.back-btn:hover {
+  background: #ffd6dc;
+  box-shadow: 0 5px 10px rgba(255, 192, 203, 0.6);
+  transform: translateY(-2px);
+}
+
+/* unread = bolder */
+.msg-btn.unread strong {
+  font-weight: 700;
+}
+
+/* full message container already defined as .message-box in your css */
+/* you can keep previous pink rounded-card styles */
