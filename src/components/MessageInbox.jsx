@@ -19,14 +19,30 @@ function FullMessage({ msg, onBack }) {
   );
 }
 
+//Helper function to discern time format being displayed
+function prettyTime(iso) {
+  const d = new Date(iso);
+  const diffHrs = (Date.now() - d) / 36e5;
+
+  return diffHrs < 24
+    ? d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })          // e.g. “19:45”
+    : d.toLocaleDateString([], { month: "short", day: "numeric" });             // e.g. “May 31”
+}
+
 export default function MessageInbox() {
   const [openId, setOpenId] = useState(null);
+  const unreadCount = messages.filter(
+  (m) => localStorage.getItem(`ldr-msg-${m.id}-opened`) !== "true"
+).length;
 
-  /* ---------- LIST MODE ---------- */
+const heading = unreadCount ? `📥 Message Inbox (${unreadCount})`
+                            : `📥 Message Inbox`;
+
+  /* LIST MODE */
   if (!openId) {
     return (
       <div className="inbox-wrapper">
-        <h2>📥 Message Inbox</h2>
+        <h1>{heading}</h1>
 
         <div className="message-list">
           {messages.map((m) => {
@@ -41,6 +57,7 @@ export default function MessageInbox() {
                 onClick={() => setOpenId(m.id)}
               >
                 {opened ? m.title : <strong>📩 {m.title}</strong>}
+                <span className="msg-time">{prettyTime(m.sentAt)}</span>
               </button>
             );
           })}
@@ -57,7 +74,7 @@ export default function MessageInbox() {
 
   return (
     <div className="inbox-wrapper">
-      <h2>📥 Message Inbox</h2>
+      <h1>📥 Message Inbox</h1>
       <FullMessage msg={msg} onBack={() => setOpenId(null)} />
     </div>
   );

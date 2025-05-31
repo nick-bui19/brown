@@ -5,37 +5,20 @@
 const messages = [
   {
     id: "m-2025-06-01",
-    title: "Happy 3 months bb 😘",
+    title: "Open this!",
+    sentAt: "2025-05-31T20:44:00Z",   //  ISO date format
     paragraphs: [
-      "Happy 3 months bb :))))",
-      "I hope you're smiling reading this! We're physically on two opposite ends of Earth right now but mentally I feel so close to you because we're always calling or sending each other updates!",
-      "You call me every day, many days multiple times a day … Thank you for letting me call you while I do literally anything and everything too!",
-      "When you look at me on call and say I don't like it, I actually secretly like it …",
-      "Just like you said the first month … Love you!!! And don't worry Brown I didn't forget about you. Love you too. Muahhh",
-      "- Tít",
-      "",
-      "P/s: Website features:",
-      "1. Countdown timer so we can count down to seeing each other again.",
-      "2. Current times for both of us.",
-      "3. Time-sync slider.",
-      "4. Vietnamese word of the day.",
-      "5. Photos of us this month."
+      "Hey bb,",
+      "I hope this letter puts a smile on your face. We may be on opposite sides of the planet, but I’ve never felt closer to you. Between our daily FaceTimes, little Locket check ups, Eggmon questions, texting, etc, ..., you've fully been woven into a part of my life.",
+      "You call me while you're doing skincare, driving for groceries, even when you're working in a coffee shop. And you let me do the same. Every day, some times multiple times a day, but every time I feel loved, safe, and unbelievably grateful.",
+      "And when you take a FT photo of me, or say my hair is pet-table, or just stare at me lovingly through me screen, and I pretend to protest,.. I actually secretly like it. It's proof that you care about me.",
+      "Long distance means that we need to adapt and learn new rhythms together, whether that means figuring out what times work best for us, deciding to do a work-date or to binge watch Perfect Match, or balancing my morning routine with how late you sleep. I built this website with a bunch of cool features to make that adaptation process easier, but also just to be a hub and proof of our relationship.",
+      "Just like you said it the first month, and it’s even truer now: I'm so happy to get to know you a little more every day. I don’t know exactly where the next chapter will take us, but I do know that I’ll keep thinking of you (and Brown, I guess and Rocket too), being there for you, and counting down the days when I see you again.",
+      "Happy three months, Tina.",
+      "Love you :))))",
+      "-Nick"
     ]
-  },
-    {
-    id: "m-2025-05-31",
-    title: "Test title",
-    paragraphs: [
-      "Test",
-    ]
-  },
-  {
-    id: "m-2025-05-30",
-    title: "Test title2",
-    paragraphs: [
-      "Test2",
-    ]
-  },
+  }
 ];
 
 export default messages;
