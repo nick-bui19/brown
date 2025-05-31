@@ -5,7 +5,8 @@ const TimeSlider = () => {
   const [hour, setHour] = useState(0);
 
   const utahTime = hour;
-  const vietnamTime = (hour - 13 + 24) % 24; // Vietnam is UTC+7, Utah is UTC-6 (13 hour diff)
+  const nyTime = (hour + 2) % 24; 
+  const vietnamTime = (hour - 13 + 24) % 24; 
 
   const formatTime = (h) => {
     const ampm = h >= 12 ? 'PM' : 'AM';
@@ -30,6 +31,10 @@ const TimeSlider = () => {
       <div className="time-row">
         <div className="flag">🇺🇸 Salt Lake City:</div>
         <div className="time">{formatTime(utahTime)}</div>
+      </div>
+      <div className="time-row">
+        <div className="flag">🇺🇸 New York:</div>
+        <div className="time">{formatTime(nyTime)}</div>
       </div>
       <div className="time-row">
         <div className="flag">🇻🇳 Hanoi:</div>
