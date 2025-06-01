@@ -3,9 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<div align="center"> <img src="src/assets/screenshot.png" alt="LDR Project Screenshot" width="600" /> </div>
-
-Nick’s Long-Distance Relationship Hub is a React single-page application built to help partners maintain closeness while apart. The app combines:
+This Long-Distance Relationship Hub is a React single-page application built to help partners maintain closeness while apart. The app combines:
 
 * Dual Time Zone Clocks & Slider — Live clocks for X location and X location , plus a slider to convert times every 5 minutes.
 
@@ -58,19 +56,12 @@ Nick’s Long-Distance Relationship Hub is a React single-page application built
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Nick Bui - nick.bui@vanderbilt.edu - tronggiao1908@gmail.com 
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [brown](https://github.com/nick-bui19/brown)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
