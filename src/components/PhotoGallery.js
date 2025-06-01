@@ -3,7 +3,7 @@ import './PhotoGallery.css';
 
 const PhotoGallery = () => {
   return (
-    <div className="feature-box">
+    <div className="feature-box slider-box">
       <h2>📸 Photo Gallery</h2>
       <div className="photo-gallery">      
         <img src={`${process.env.PUBLIC_URL}/images/facetime1.jpeg`} alt="FaceTime" />

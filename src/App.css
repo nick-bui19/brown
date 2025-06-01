@@ -1,7 +1,13 @@
+/* App.css */
+
+/* ——————————————————————————————————————————
+   Base styles (desktop + larger tablets)
+   —————————————————————————————————————————— */
+
 body {
   font-family: 'Courier', monospace;
   background-color: #fff5e4; /* from valentine site */
-  color: #ff9494; /* pink from valentine site */
+  color: #ff9494;            /* pink from valentine site */
   margin: 0;
   padding: 0;
   text-align: center;
@@ -56,6 +62,25 @@ h1 {
   box-shadow: 1px 1px 2px #ffe3e1;
 }
 
+
+.feature-box,
+.inbox-wrapper {
+  width: 92vw;             /* fill most of the screen under 600px */
+  padding: 14px 16px;
+}
+
+.feature-box h2,
+.inbox-wrapper h1 {
+  font-size: 1.45rem;      /* reduced on mobile */
+  line-height: 1.2;
+}
+
+.feature-box p {
+  font-size: 1rem;         /* reduced on mobile */
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
 .feature-row {
   display: flex;
   justify-content: center;
@@ -64,7 +89,6 @@ h1 {
   flex-wrap: wrap; /* for responsiveness */
 }
 
-/*  */
 .feature-box {
   background-color: #fff0eb;
   border-radius: 20px;
@@ -76,7 +100,7 @@ h1 {
   text-align: left;
 }
 
-/* Message Inbox Component */
+/* Message Inbox Component (desktop) */
 .inbox-wrapper {
   background-color: #fff0eb;
   border-radius: 20px;
@@ -87,9 +111,64 @@ h1 {
   color: #ff9494;
 }
 
+/* ——————————————————————————————————————————
+   📱 Mobile–only tweaks  (≤ 600 px wide)
+   —————————————————————————————————————————— */
 @media (max-width: 600px) {
-  .feature-box {
-    width: 92vw;
-    padding: 18px;
+
+  /* Core cards (“feature-box”, “inbox-wrapper”): make them fill most of the screen */
+  .feature-box,
+  .inbox-wrapper {
+    width: 92vw;           /* fill ~92% of viewport width */
+    padding: 14px 16px;    /* slightly reduce padding */
+  }
+
+  /* Headings get a bit smaller on mobile */
+  .feature-box h2,
+  .inbox-wrapper h1 {
+    font-size: 1.45rem;    /* was ~2rem */
+    line-height: 1.2;
+    word-wrap: break-word; /* ensure header text wraps */
+  }
+
+  /* Word-of-the-Day and other paragraph text: wrap and shrink font */
+  .feature-box p {
+    font-size: 1rem;       /* was 1.2rem */
+    line-height: 1.45;
+    word-wrap: break-word; /* allow long words to break */
+    white-space: normal;   /* ensure text flows onto multiple lines */
+  }
+
+  /* Photo Gallery Image (inside .feature-box): scale to fit small screens */
+  .photo-gallery {
+    width: 100%;           /* fill its container */
+    height: auto;          /* let height adjust automatically */
+    margin: 0 auto 1rem;   /* center + add bottom margin */
+  }
+  .photo-gallery img {
+    width: 100%;           
+    height: auto;          /* maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* Inbox list buttons: shrink font and padding */
+  .msg-btn,
+  .back-btn {
+    font-size: 1rem;
+    padding: 0.55rem 0.8rem;
+  }
+
+  /* “Message card” – scrolling container */
+  .message-content {
+    max-height: 68vh;      /* keep content inside viewport height */
+    overflow-y: auto;      /* allow inner scroll if content is long */
+    padding-right: 6px;    /* space for scrollbar */
+    word-wrap: break-word; /* ensure wrapped text */
+  }
+
+  /* Time-Sync slider takes full width on mobile */
+  .time-sync-slider input[type="range"] {
+    width: 100%;
   }
 }

@@ -75,47 +75,145 @@
   opacity: 0.7;
 }
 
-/* Laptop half-screen breakpoint */
-@media (max-width: 900px) {         
+/* ==============================
+   LARGE LAPTOP / SMALL DESKTOP
+   max-width: 1200px (e.g. 13" MacBook Pro,
+   1440×900 displays in a narrower window)
+   ============================== */
+@media (max-width: 1200px) {
   .inbox-wrapper,
   .message-box {
-    width: 92vw; /* fluid bp */     
-    max-width: 92vw;
-    padding: 18px;
+    /* shrink just a bit from full-width desktop */
+    width: 85vw;
+    max-width: 1000px;
+    padding: 20px;
   }
 
-  /* list-row buttons stack title & time */
   .msg-btn {
-    flex-direction: column;
-    gap: 4px;
-    text-align: center;
+    /* keep title + time on one row, but add a bit more spacing */
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
   }
 }
 
-/* Mobile breakpoint */
-@media (max-width: 600px) {
-  /* wrap that holds the whole inbox */
-  .inbox-wrapper {
-    width: 92vw; /* fluid bp */
+/* ==============================
+   LAPTOP / TABLET LANDSCAPE
+   max-width: 1024px (e.g. 11" iPad Pro in landscape,
+   small Windows laptop at 1366×768, etc.)
+   ============================== */
+@media (max-width: 1024px) {
+  .inbox-wrapper,
+  .message-box {
+    width: 88vw;
+    max-width: 800px;
+    padding: 18px;
+  }
+
+  .msg-btn {
+    /* stack title + time on two lines for more breathing room */
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/* ==============================
+   TABLET / PHABLET
+   max-width: 768px (e.g. iPad portrait,
+   large Android tablets, some Chromebooks, etc.)
+   ============================== */
+@media (max-width: 768px) {
+  .inbox-wrapper,
+  .message-box {
+    width: 90vw;
+    max-width: 600px;
     padding: 16px;
   }
 
-  /* each message row */
   .msg-btn {
-    flex-direction: column;     /* title on top, time under */
-    gap: 4px;
+    /* stack title + time, center them */
+    flex-direction: column;
+    gap: 0.5rem;
     text-align: center;
+    font-size: 1.05rem;
+  }
+}
+
+/* ==============================
+   LARGE PHONE / SMALL TABLET
+   max-width: 600px (e.g. iPhone 12/13/14 Pro Max
+   in portrait, Pixel 6)
+   ============================== */
+@media (max-width: 600px) {
+  .inbox-wrapper,
+  .message-box {
+    width: 92vw;
+    max-width: 420px;
+    padding: 14px;
+  }
+
+  .msg-btn {
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+    font-size: 1rem;
   }
 
   .msg-time {
+    /* put timestamp below title on very small screens */
     font-size: 0.85rem;
   }
+}
 
-  /* big message “card” view  */
+/* ==============================
+   SMALL PHONE
+   max-width: 480px (e.g. older iPhones SE,
+   small Android phones in portrait)
+   ============================== */
+@media (max-width: 480px) {
+  .inbox-wrapper,
   .message-box {
-    width: 92vw;
-    max-width: 92vw;
-    padding: 18px;
+    width: 95vw;
+    max-width: 336px;
+    padding: 12px;
+  }
+
+  .msg-btn {
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .msg-time {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==============================
+   EXTRA-SMALL PHONE
+   max-width: 360px (e.g. smallest Android, iPhone SE in “zoomed” mode)
+   ============================== */
+@media (max-width: 360px) {
+  .inbox-wrapper,
+  .message-box {
+    width: 98vw;
+    max-width: 252px;
+    padding: 10px;
+  }
+
+  .msg-btn {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .msg-time {
+    font-size: 0.75rem;
   }
 }
 

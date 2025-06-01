@@ -2,23 +2,6 @@ import React, { useState } from "react";
 import messages from "../data/messages";
 import "./MessageInbox.css";
 
-/* Single message view (pulled out of MessageCard for clarity) */
-function FullMessage({ msg, onBack }) {
-  return (
-    <>
-      <button className="back-btn" onClick={onBack}>
-        ⬅ Back to inbox
-      </button>
-
-      <div className="message-box">
-        {msg.paragraphs.map((p, i) =>
-          p.trim() ? <p key={i}>{p}</p> : <br key={i} />
-        )}
-      </div>
-    </>
-  );
-}
-
 //Helper function to discern time format being displayed
 function prettyTime(iso) {
   const d = new Date(iso);
@@ -29,60 +12,76 @@ function prettyTime(iso) {
     : d.toLocaleDateString([], { month: "short", day: "numeric" });             // e.g. “May 31”
 }
 
+/**
+ * When a message is “expanded,” we render this block inline immediately below its title.
+ * onClose() will collapse it (setOpenId(null)).
+ */
+function InlineFullMessage({ msg, onClose }) {
+  return (
+    <div className="inline-full-message">
+      <div className="message-box-inline">
+        {msg.paragraphs.map((p, i) =>
+          p.trim() ? <p key={i}>{p}</p> : <br key={i} />
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function MessageInbox() {
   const [openId, setOpenId] = useState(null);
+
+  // Count how many messages have not been marked “opened” in localStorage
   const unreadCount = messages.filter(
-  (m) => localStorage.getItem(`ldr-msg-${m.id}-opened`) !== "true"
-).length;
+    (m) => localStorage.getItem(`ldr-msg-${m.id}-opened`) !== "true"
+  ).length;
 
-const heading = unreadCount ? `📥 Message Inbox (${unreadCount})`
-                            : `📥 Message Inbox`;
+  const heading = unreadCount
+    ? `📥 Message Inbox (${unreadCount})`
+    : `📥 Message Inbox`;
 
-  /* LIST MODE */
-  if (!openId) {
-    return (
-      <div className="inbox-wrapper">
-        <h1>{heading}</h1>
+  return (
+    <div className="inbox-wrapper">
+      <h1>{heading}</h1>
 
-        <div className="message-list">
-          {messages.map((m) => {
-            /* read/unread taken from localStorage */
-            const opened =
-              localStorage.getItem(`ldr-msg-${m.id}-opened`) === "true";
+      <div className="message-list">
+        {messages.map((m) => {
+          const opened = localStorage.getItem(`ldr-msg-${m.id}-opened`) === "true";
+          const isExpanded = openId === m.id;
 
-            return (
+          return (
+            <React.Fragment key={m.id}>
               <button
-                key={m.id}
                 className={`msg-btn ${opened ? "read" : "unread"}`}
-                onClick={() => setOpenId(m.id)}
+                onClick={() => {
+                  if (openId === m.id) {
+                    // If you click again on the same message, collapse it
+                    setOpenId(null);
+                  } else {
+                    // Otherwise expand this message
+                    setOpenId(m.id);
+                    localStorage.setItem(`ldr-msg-${m.id}-opened`, "true");
+                  }
+                }}
               >
-                {/* title */}
                 {opened ? (
                   <span>{m.title}</span>
                 ) : (
                   <strong>📩 {m.title}</strong>
                 )}
-
-                {/* time, right-aligned on desktop, drops below on mobile */}
                 <span className="msg-time">{prettyTime(m.sentAt)}</span>
               </button>
-            );
-          })}
-        </div>
+
+              {isExpanded && (
+                <InlineFullMessage
+                  msg={m}
+                  onClose={() => setOpenId(null)}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
       </div>
-    );
-  }
-
-  /* ---------- FULL MESSAGE MODE ---------- */
-  const msg = messages.find((m) => m.id === openId);
-
-  /* mark as read */
-  localStorage.setItem(`ldr-msg-${msg.id}-opened`, "true");
-
-  return (
-    <div className="inbox-wrapper">
-      <h1>📥 Message Inbox</h1>
-      <FullMessage msg={msg} onBack={() => setOpenId(null)} />
     </div>
   );
 }

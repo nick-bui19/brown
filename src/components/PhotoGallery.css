@@ -1,15 +1,20 @@
+/* PhotoGallery.css */
+
+/* Make the “photo-gallery” card fluid, up to a sensible max */
 .photo-gallery {
-  width: 280px;
-  height: 280px;
+  width: 90vw;         /* was 280px; now fluid */
+  max-width: 320px;    /* new: cap to ~320px on wider screens */
+  aspect-ratio: 1;     /* maintain a perfect square */
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(255, 192, 203, 0.4);
-  margin: 0 auto;
+  margin: 0 auto;      /* center it */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Make the inner <img> fill the container and crop as needed */
 .photo-gallery img {
   width: 100%;
   height: 100%;
@@ -18,6 +23,25 @@
   border-radius: 12px;
 }
 
+/* Optional description (if you have one) can also wrap nicely. */
 .photo-gallery-description {
-  justify-content: center;
+  font-family: 'Courier', monospace;
+  color: #ff9494;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  word-wrap: break-word;
+}
+
+/* MOBILE OVERRIDES (≤ 600px) */
+@media (max-width: 600px) {
+  .photo-gallery {
+    width: 92vw;     /* fill more of the narrow screen */
+    max-width: 50vw; /* let it stretch fully if needed */
+  }
+  .photo-gallery-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 8px;  /* small horizontal padding for tiny screens */
+  }
 }

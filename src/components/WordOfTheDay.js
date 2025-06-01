@@ -1,5 +1,6 @@
 // src/components/WordOfTheDay.js
 import React, { useState, useEffect } from 'react'
+import './WordOfTheDay.css';
 import { supabase } from '../lib/supabaseClient'
 
 function WordOfTheDay() {
@@ -59,7 +60,7 @@ function WordOfTheDay() {
 
   if (loading) {
     return (
-      <div className="feature-box">
+      <div className="feature-box slider-box">
         <h2>📚 Word of the Day</h2>
         <p>Loading...</p>
       </div>
@@ -68,7 +69,7 @@ function WordOfTheDay() {
 
   if (error) {
     return (
-      <div className="feature-box">
+      <div className="feature-box slider-box">
         <h2>📚 Word of the Day</h2>
         <p style={{ color: '#E36A6A' }}>{error}</p>
       </div>
@@ -77,7 +78,7 @@ function WordOfTheDay() {
 
   if (!wordData) {
     return (
-      <div className="feature-box">
+      <div className="feature-box slider-box">
         <h2>📚 Word of the Day</h2>
         <p>There’s no word scheduled for today.</p>
       </div>
@@ -85,7 +86,7 @@ function WordOfTheDay() {
   }
 
   return (
-    <div className="feature-box">
+    <div className="feature-box slider-box">
       <h2>📚 Word of the Day</h2>
       <p>
         <strong>{wordData.word}</strong>
