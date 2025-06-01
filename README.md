@@ -1,7 +1,21 @@
-# Getting Started with Create React App
+# About the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center"> <img src="src/assets/screenshot.png" alt="LDR Project Screenshot" width="600" /> </div>
+Nick’s Long-Distance Relationship Hub is a React single-page application built to help partners maintain closeness while apart. The app combines:
 
+Dual Time Zone Clocks & Slider — Live clocks for Utah and Hanoi, plus a slider to convert times every 5 minutes.
+
+Word of the Day (Vietnamese) — Fetches from Supabase based on Utah’s midnight, with translation and notes.
+
+Photo Gallery — Responsive “favorite photo of the month,” with fluid resizing on all devices.
+
+Inline Message Inbox — Lists heartfelt messages; click a title to expand it inline, with read/unread tracked via localStorage.
+
+Countdown Timer — Real-time countdown until the next reunion, recalculated every second in Utah time.
+
+All sections share a cohesive design with responsive breakpoints at 1200 px, 1024 px, 768 px, 600 px, 480 px, and 360 px to ensure no overflow on any screen size.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 ## Available Scripts
 
 In the project directory, you can run:
