@@ -10,14 +10,14 @@ function LiveTime() {
       const now = new Date();
 
       const vnOptions = {
-        timeZone: 'Asia/Ho_Chi_Minh',
+        timeZone: 'America/Los_Angeles', //Asia/Ho_Chi_Minh
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
       };
 
       const utahOptions = {
-        timeZone: 'America/Denver', // Salt Lake City uses this
+        timeZone: 'America/Denver', // America/Denver Salt Lake City uses this
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './CountdownTimer.css';
 
 function CountdownTimer() {
-  const targetDate = new Date('2025-08-13T23:30:00'); // Set reunion time
+  const targetDate = new Date('2025-06-12T07:30:00'); // Set reunion time
 
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -43,17 +43,24 @@ function CountdownTimer() {
 
   return (
     <div className="countdown">
-    {timeLeft ? (
-      <h2>
-        Only {timeLeft.months} month{timeLeft.months !== 1 && 's'}{' '}
-        {timeLeft.days} day{timeLeft.days !== 1 && 's'} {timeLeft.hours} hour{timeLeft.hours !== 1 && 's'}{' '}
-        {timeLeft.minutes} minute{timeLeft.minutes !== 1 && 's'} {timeLeft.seconds} second{timeLeft.seconds !== 1 && 's'} until we see each other again.
-      </h2>
-
-    ) : (
-      <h2>Loading countdown...</h2>
-    )}
-  </div>
+      {!timeLeft ? (
+        <h2>Loading countdown…</h2>
+      ) : timeLeft.months === 0 &&
+        timeLeft.days === 0 &&
+        timeLeft.hours === 0 &&
+        timeLeft.minutes === 0 &&
+        timeLeft.seconds === 0 ? (
+        <h2>🎉 We see each other now!! 🎉</h2>
+      ) : (
+        <h2>
+          Only {timeLeft.months} month{timeLeft.months !== 1 && 's'}{' '}
+          {timeLeft.days} day{timeLeft.days !== 1 && 's'} {timeLeft.hours} hour
+          {timeLeft.hours !== 1 && 's'} {timeLeft.minutes} minute
+          {timeLeft.minutes !== 1 && 's'} {timeLeft.seconds} second
+          {timeLeft.seconds !== 1 && 's'} until we see each other again.
+        </h2>
+      )}
+    </div>
   );
 }
 

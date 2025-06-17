@@ -30,6 +30,7 @@ export default function TimeSyncSlider() {
 };
 
   const minutes = pos * STEP_MIN;                // 0…1440
+  const la      = tzTime("America/Los_Angeles", minutes);
   const slc     = tzTime("America/Denver", minutes);
   const nyc     = tzTime("America/New_York", minutes);
   const hanoi   = tzTime("Asia/Ho_Chi_Minh", minutes);
@@ -50,9 +51,10 @@ export default function TimeSyncSlider() {
       />
 
       <ul className="tz-readout">
+        <li>🇺🇸 Los Angeles: <span>{la}</span></li>
         <li>🇺🇸 Salt Lake City: <span>{slc}</span></li>
         <li>🇺🇸 New York: <span>{nyc}</span></li>
-        <li>🇻🇳 Hanoi: <span>{hanoi}</span></li>
+        {/* <li>🇻🇳 Hanoi: <span>{hanoi}</span></li> */}
       </ul>
     </div>
   );
