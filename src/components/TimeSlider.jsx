@@ -16,7 +16,7 @@ export default function TimeSyncSlider() {
     now.getFullYear(),
     now.getMonth(),
     now.getDate(),
-    13,          // Utah offset
+    0,           // Utah offset
     0 + offsetMinutes, // plus offset
     0
   );
