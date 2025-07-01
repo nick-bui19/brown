@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './CountdownTimer.css';
 
 function CountdownTimer() {
-  const targetDate = new Date('2025-06-12T07:30:00'); // Set reunion time
+  const targetDate = new Date('2025-07-19T06:30:00-04:00'); // Set reunion time (6:30 AM New York time)
 
   const calculateTimeLeft = () => {
     const now = new Date();
     console.log('Target Date:', targetDate);
+    console.log('Target Date (ISO):', targetDate.toISOString());
+    console.log('Target Date (Local):', targetDate.toString());
     console.log('Current Date:', new Date());
+    console.log('Current Date (ISO):', new Date().toISOString());
+    console.log('Current Date (Local):', new Date().toString());
 
     const difference = targetDate - now;
 
