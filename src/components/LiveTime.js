@@ -2,32 +2,32 @@ import React, { useEffect, useState } from 'react';
 import './LiveTime.css';
 
 function LiveTime() {
-  const [vnTime, setVnTime] = useState('');
-  const [utahTime, setUtahTime] = useState('');
+  const [nickTime, setNickTime] = useState('');
+  const [tinaTime, setTinaTime] = useState('');
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
 
-      const vnOptions = {
+      const nickOptions = {
         timeZone: 'America/Los_Angeles', //Asia/Ho_Chi_Minh
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
       };
 
-      const utahOptions = {
-        timeZone: 'America/Denver', // America/Denver Salt Lake City uses this
+      const tinaOptions = {
+        timeZone: 'America/New_York', // America/Denver 
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
       };
 
-      const vnFormatted = now.toLocaleTimeString('en-US', vnOptions);
-      const utahFormatted = now.toLocaleTimeString('en-US', utahOptions);
+      const nickFormatted = now.toLocaleTimeString('en-US', nickOptions);
+      const tinaFormatted = now.toLocaleTimeString('en-US', tinaOptions);
 
-      setVnTime(vnFormatted);
-      setUtahTime(utahFormatted);
+      setNickTime(nickFormatted);
+      setTinaTime(tinaFormatted);
     };
 
     updateTime(); // set initial time immediately
@@ -39,7 +39,7 @@ function LiveTime() {
   return (
     <div className="live-time">
       <h2>
-        It’s {vnTime} where I am and it’s {utahTime} where you are right now.
+        It’s {nickTime} where I am and it’s {tinaTime} where you are right now.
       </h2>
     </div>
   );
